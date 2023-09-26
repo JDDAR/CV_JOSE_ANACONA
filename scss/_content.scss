@@ -1,0 +1,242 @@
+@import 'variables';
+
+
+.container {
+  width: 60%;
+  margin: auto;
+  margin-top: -65px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__left{
+    width: 40%
+  }
+
+  &__nav-left{
+    @include containerBorderBlack;
+    margin-top: 20vh;
+    width: 80%;
+
+    border-radius: 12px;
+  }
+
+  &__item-left{
+
+    display: flex; 
+    flex-direction: column;
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: $padding-one;
+
+    }
+    .item-plus{
+      cursor: pointer;
+      width: 10%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        position: absolute;
+        background: $color-Black01;
+        width: 50%;
+        height: 3px;
+        border-radius: 5px;
+      }
+
+      .line1{
+        transform: rotate(90deg);
+        transition: 400ms ease-in-out;
+      }
+      .top {
+        rotate: -90deg; 
+      }
+    }
+    .links-plus{
+      display: none; 
+    }
+    .links-plus-on{
+      display: flex;
+      flex-direction: column;
+      animation: slideItem 800ms ease-in-out;
+      a{
+        padding: $padding-one;
+        text-decoration: none;
+        color: $color-Black01;
+        font-weight: $font-weight-Medium;
+      }
+      :nth-child(1){
+        background: blue;
+        color: $color-white01;
+      }
+      :nth-child(2){
+        background: yellow;
+      }
+      :nth-child(3){
+        background: lightblue;
+        border-end-end-radius: 12px;
+        border-end-start-radius: 12px;
+      }
+    }
+    @keyframes slideItem {
+      0% {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0%);
+        opacity: 100;
+      }  
+    }
+
+  }
+
+  /*********************+ content right*/
+  &__right{
+    width: 60%;
+    position: relative;
+  }
+  &__header-right{
+    @include containerBorderWhite;
+    border-bottom: none;
+    padding: $padding-one;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: $color-white01;
+    background: $color-Black01;
+    height: 65px;
+    border-start-end-radius: 12px;
+    border-start-start-radius: 12px;
+  }
+  &__perfil{
+    @include containerBorderBlack;
+    @include textContent;
+    border-top: none;
+    padding: $padding-one;
+  }
+  &__footer-right{
+    background-color: $color-Black01;
+    height: 45px;
+    border-end-end-radius: 12px;
+    border-end-start-radius:12px;
+  }
+  &__skill{
+    @include containerBorderBlack;
+    padding: $padding-one;
+    margin-top: 25px;
+    border-radius: 12px;
+    display:flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+
+  }
+  &__lenguage-skill{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    article {
+      position: relative;
+
+    }
+    i{
+      cursor: pointer;
+      font-size: 2em;
+    }
+
+    .level-skill-div{
+      background-color: $color-Black01;
+      height: 25px;
+      width: 20vw;
+      position: absolute;
+      margin-top: 50px;
+      border-radius: 50px;
+      z-index: 0;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      
+
+      p{
+        color: $color-white01;
+      }
+    }
+    .level-skill {
+      height: 15px;
+      z-index: 2;
+      border-radius: 50px;
+    }
+    // Skill :hover
+    .skill1:hover + div.level-skill-div{
+      display: flex;
+      .color-skill1 {
+        width: 40%;
+        background-color: pink;
+      }
+    }
+    .skill2:hover + div.level-skill-div{
+      display: flex;
+      .color-skill2 {
+        width: 70%;
+        background-color: blue;
+      }
+    }
+    .skill3:hover + div.level-skill-div{
+      display: flex;
+      .color-skill3 {
+        width: 50%;
+        background-color: yellow;
+      }
+    }
+    .skill4:hover + div.level-skill-div{
+      display: flex;
+      .color-skill4 {
+        width: 40%;
+        background-color: lightblue;
+      }
+    }
+    .skill5:hover + div.level-skill-div{
+      display: flex;
+      .color-skill5 {
+        width: 30%;
+        background-color: lightgreen;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 1200px){
+  .container{
+    width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    &__left {
+      width: 100%;
+    }
+    &__nav-left{
+      margin-top: 10vh;
+      width: 100%;
+    }
+    &__right{
+      width: 100%;
+    }
+  } 
+}
+@media (max-width: 580px){
+
+   .content__skill{
+    flex-direction: column;
+   }
+}

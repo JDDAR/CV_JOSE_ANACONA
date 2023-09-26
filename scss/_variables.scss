@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&display=swap');
+
+//Fonts 
+
+$font-family : 'Work Sans', sans-serif;
+
+$font-weight-ExtraLight : 200;
+$font-weight-light: 300;
+$font-weight-Regular: 400;
+$font-weight-Medium: 500;
+$font-weight-SemiBold:600;
+$font-weight-Bold: 700;
+
+$font-size-h1: 5em;
+$font-size-h2: 2em;
+$font-size-text: 1em;
+
+
+//padding
+
+$padding-one: 25px;
+
+//Colors 
+
+$color-Black01: #1e1e1e;
+$color-white01: #d9d9d9;
+
+
+//Mixins
+
+@mixin containerBorderWhite{
+  border: 1px solid $color-white01;
+}
+
+@mixin containerBorderBlack{
+  border: 1px solid $color-Black01;
+}
+
+@mixin textContent{
+  font-size: $font-size-text;
+  line-height: 1.5em;
+  color: rgba($color-Black01, 0.8);
+}

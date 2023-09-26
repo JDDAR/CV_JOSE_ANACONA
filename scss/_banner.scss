@@ -1,0 +1,54 @@
+@import 'variables';
+
+.banner{
+  background-color: $color-Black01;
+  height: 50vh;
+  position: relative;
+  &__cuadricula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    background: $color-Black01;
+    filter: saturate(2);
+  }
+  .colorBox{
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 1s ease;
+    position: relative;
+    margin: 1px;
+    background: $color-Black01; 
+  }
+  .colorBox:hover{
+    background: $color-white01;
+    transition: 0s;
+  }
+
+  .bannerAdmin{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $color-white01;
+    filter: blur(60px);
+    animation: scannerBox 6s linear infinite;
+  }
+  @keyframes scannerBox {
+    0%{
+      top: -80px;
+    }
+    100% {
+      top: 90%;
+    }
+  }
+
+}
+
+
+
